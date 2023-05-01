@@ -1,0 +1,22 @@
+<?php
+return [
+    'dashboard' => 'Dashboard',
+    'calendar' => 'Calendar',
+    'bookings' => 'Apointemnts',
+    'rating' => 'Customer Ratings',
+    'ads' => 'Ads',
+    'settings' => 'Settings',
+    'subscription' => 'Subscriptions',
+    'dates' => 'Dates',
+    "banners" => 'Banners',
+    "age_groups" => 'Age Groups',
+    'events' => 'Events',
+    'races' => 'Races',
+    'pages' => 'System pages',
+    'coupons' => 'Coupons',
+    'countries' => 'Countries',
+    'nationalities' => 'Nationalities',
+    'tickets' => 'Tickets',
+    'transactions' => 'Transactions',
+    'results' => 'Results',
+];

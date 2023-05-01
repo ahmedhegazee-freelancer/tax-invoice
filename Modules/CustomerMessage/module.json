@@ -1,0 +1,11 @@
+{
+    "name": "CustomerMessage",
+    "alias": "customermessage",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CustomerMessage\\Providers\\CustomerMessageServiceProvider"
+    ],
+    "files": []
+}
