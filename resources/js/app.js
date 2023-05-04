@@ -24,7 +24,8 @@ const i18n = createI18n({
 });
 
 const appName =
-    window.document.getElementsByTagName("title")[0]?.innerText || "Matchbox";
+    window.document.getElementsByTagName("title")[0]?.innerText ||
+    "TaxInvoices";
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -44,6 +45,7 @@ createInertiaApp({
             .use(i18n)
             .use(ZiggyVue, Ziggy);
         globalComponents(newApp);
+        // console.log(newApp.mount(el));
         return newApp.mount(el);
     },
 });

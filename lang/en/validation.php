@@ -283,6 +283,17 @@ return [
         'message' => 'Message',
         'result_file' => 'Result file',
         'result' => 'Result',
+        'branch' => 'Branch',
+        'branch_code' => 'Branch code',
+        'activity_code' => 'Activity code',
+        'credential' => 'Credential',
+        'device_serial_number' => 'device_serial_number',
+        'client_id' => 'client_id',
+        'client_secret' => 'client_secret',
+        'pos_os_version' => 'pos_os_version',
+        'is_prod' => 'is_prod',
+        'key' => 'key',
+        'filter_date' => 'filter date',
     ],
 
 ];

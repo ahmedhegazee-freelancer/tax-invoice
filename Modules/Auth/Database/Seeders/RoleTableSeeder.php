@@ -20,7 +20,6 @@ class RoleTableSeeder extends Seeder
         Model::unguard();
         Role::insert([
             ['name' => 'super-admin', 'guard_name' => 'web',],
-            ['name' => 'customer', 'guard_name' => 'web',],
             ['name' => 'admin', 'guard_name' => 'web',],
         ]);
         $permissions = Permission::all()->pluck('name')->toArray();

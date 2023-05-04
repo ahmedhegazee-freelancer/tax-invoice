@@ -4,9 +4,9 @@
             :href="route('dashboard')"
             class="intro-x flex items-center pl-5 pt-4"
         >
-            <img alt="Matchbox" class="w-20" src="/assets/logo.png" />
+            <img alt="TaxInvoices" class="w-20" src="/assets/logo.png" />
             <span class="hidden xl:block text-white text-lg ml-3">
-                Matchbox
+                TaxInvoices
             </span>
         </Link>
         <div class="side-nav__devider my-6"></div>

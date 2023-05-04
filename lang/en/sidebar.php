@@ -19,4 +19,5 @@ return [
     'tickets' => 'Tickets',
     'transactions' => 'Transactions',
     'results' => 'Results',
+    'branches' => 'Branches',
 ];

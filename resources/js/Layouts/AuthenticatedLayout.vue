@@ -37,7 +37,7 @@ watch(flashMessage, (newMessage) => {
 </script>
 
 <template>
-    <Head title="Matchbox Dashboard" />
+    <Head title="TaxInvoices Dashboard" />
     <div class="py-2">
         <MobileMenu />
         <div class="flex mt-[4.7rem] md:mt-0">

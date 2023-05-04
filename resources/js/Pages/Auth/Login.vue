@@ -43,12 +43,12 @@ const submit = () => {
                     <div class="hidden xl:flex flex-col min-h-screen">
                         <a href="" class="-intro-x flex items-center pt-5">
                             <img
-                                alt="Matchbox"
+                                alt="TaxInvoices"
                                 class="w-12"
                                 src="/assets/logo.png"
                             />
                             <span class="text-white text-lg ml-3">
-                                Matchbox
+                                TaxInvoices
                             </span>
                         </a>
                         <div class="my-auto">

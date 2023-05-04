@@ -32,25 +32,11 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var string[]
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'middle_name',
+        'name',
+
         'email',
         'password',
-        'uuid',
-        'mobile_token',
-        'is_blocked',
-        'profile_photo_path',
-        'age_group_id',
-        'age',
-        'phone',
-        'country_id',
-        'date_of_birth',
-        'instagram_account',
-        'club_name',
-        'country_code',
-        'gender_id',
-        'nationality_id',
+
         'email_verified_at',
     ];
 
@@ -73,16 +59,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array
-     */
-    protected $appends = [
-        'profile_photo_url',
-        'full_name',
-        'gender'
-    ];
+
     /**
      * Get the URL to the user's profile photo.
      *
@@ -90,49 +67,11 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function getFullNameAttribute()
     {
-        return $this->first_name . " " . $this->middle_name . " " . $this->last_name;
-    }
-    /**
-     * Get the URL to the user's profile photo.
-     *
-     * @return string
-     */
-    public function getGenderAttribute()
-    {
-        return get_gender($this->gender_id);
-    }
-    public function isBlocked()
-    {
-        return $this->is_blocked;
-    }
-    public function cart(): \Illuminate\Database\Eloquent\Relations\HasOne
-    {
-        return $this->hasOne(Cart::class);
+        return $this->name;
     }
 
-    public function dependencies()
-    {
-        return $this->hasMany(Dependency::class);
-    }
-    public function ageGroup()
-    {
-        return $this->belongsTo(AgeGroup::class);
-    }
     public function getRouteKeyName()
     {
         return 'uuid';
-    }
-    public function messages()
-    {
-        return $this->hasMany(CustomerMessage::class);
-    }
-    /**
-     * Get the entity's notifications.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
-     */
-    public function notifications()
-    {
-        return $this->morphMany(DatabaseNotification::class, 'notifiable')->where('locale', \current_locale())->latest();
     }
 }
