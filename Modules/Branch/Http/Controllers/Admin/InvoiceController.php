@@ -40,12 +40,13 @@ class InvoiceController extends Controller
     {
         $request->validate([
             'tickets' => 'required|file',
-            'items' => 'required|file',
+            'items' => 'nullable|file',
             'branch' => 'required|numeric|exists:branches,id'
         ]);
         $branch = Branch::findOrFail($request->get('branch'));
         DB::table('invoices')->where('branch_id', $branch->id)->delete();
-        DB::table('invoice_items')->where('branch_id', $branch->id)->delete();
+        if ($request->file('items'))
+            DB::table('invoice_items')->where('branch_id', $branch->id)->delete();
         if ($request->file('tickets')) {
             Excel::queueImport(new InvoicesImport($branch->id), $request->file('tickets'))->allOnQueue('invoices');
         }

@@ -58,8 +58,8 @@
                             @change="form.items = $event.target.files[0]"
                             placeholder="Name"
                         />
-                        <InputError class="mt-2" :message="form.errors.items" />
-                        <FrontErrorMessage :errors="v$.items.$errors" />
+                        <!-- <InputError class="mt-2" :message="form.errors.items" /> -->
+                        <!-- <FrontErrorMessage :errors="v$.items.$errors" /> -->
                     </div>
                     <div class="text-right mt-5">
                         <button
@@ -104,12 +104,12 @@ const rules = computed(() => ({
             required
         ),
     },
-    items: {
-        required: helpers.withMessage(
-            t("validation.required", { attribute: "items" }),
-            required
-        ),
-    },
+    // items: {
+    //     required: helpers.withMessage(
+    //         t("validation.required", { attribute: "items" }),
+    //         required
+    //     ),
+    // },
     branch: {
         required: helpers.withMessage(
             t("validation.required", { attribute: "branch" }),

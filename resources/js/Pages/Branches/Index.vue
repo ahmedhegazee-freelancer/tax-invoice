@@ -4,7 +4,7 @@
             {{ t("sidebar.branchs") }}
         </h2>
         <div class="grid grid-cols-12 gap-6 mt-5">
-            <!-- <div
+            <div
                 class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2"
             >
                 <Link
@@ -15,7 +15,7 @@
                         t("admin.add") + " " + t("validation.attributes.branch")
                     }}
                 </Link>
-            </div> -->
+            </div>
             <!-- BEGIN: Data List -->
             <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
                 <table class="table table-report -mt-2">
