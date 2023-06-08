@@ -29,3 +29,6 @@ Route::get('upload-invoices', [InvoiceController::class, 'showUpload'])->name('i
 Route::post('upload-invoices', [InvoiceController::class, 'upload'])->name('invoices.upload.store');
 Route::get('send-invoices', [InvoiceController::class, 'showSend'])->name('invoices.send');
 Route::post('send-invoices', [InvoiceController::class, 'send'])->name('invoices.send.store');
+Route::post('send-unsent-invoices', [InvoiceController::class, 'sendInvoices'])->name('invoices.send.unsent-invoices');
+Route::get('show-unsent', [InvoiceController::class, 'showUnsentInvoices'])->name('invoices.unsent');
+Route::get('export-json', [InvoiceController::class, 'exportJson'])->name('invoices.export-json');

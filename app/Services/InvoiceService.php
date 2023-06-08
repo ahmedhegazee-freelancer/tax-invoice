@@ -55,10 +55,11 @@ class InvoiceService
             })
             ->orderByDesc('closing_date')->limit(1)->first();
     }
-    public function formatInvoices(Branch $branch, array $invoicesIds, string $deviceID)
+    public function formatInvoices(Branch $branch, array $invoicesIds, string $deviceID, bool $status = false)
     {
         $service = InvoiceFormatter::make();
         $receipts = [];
+        $sentInvoices = [];
         $invoices = Invoice::with('items')
             ->where(function ($query) {
                 $query->where('paid', true)
@@ -90,8 +91,17 @@ class InvoiceService
             dump('uuid:' . $uuid . " id:" . $invoice->id);
             $formattedInvoice['header']['uuid'] = $uuid;
             $receipts[] = $formattedInvoice;
+            $sentInvoices[] = [
+                'ticket_id' => $invoice->ticket_id,
+                'branch_id' => $branch->id,
+                'branch_name' => $branch->name,
+                'is_sent' => false,
+                'is_prod' => $status,
+                'data' => json_encode($formattedInvoice),
+                'date' => $invoice->closing_date,
+            ];
         }
-
+        DB::table('send_invoices')->upsert($sentInvoices, ['ticket_id', 'is_prod']);
         return $receipts;
     }
     // public function generateInvoiceJobs(string $startDate = null)

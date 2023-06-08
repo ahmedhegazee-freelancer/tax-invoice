@@ -1,0 +1,1 @@
+import{o as r,g as o,r as n}from"./app-e9c942b5.js";const p=["type"],l={__name:"PrimaryButton",props:{type:{type:String,default:"submit"}},setup(t){return(e,s)=>(r(),o("button",{type:t.type,class:"btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top"},[n(e.$slots,"default")],8,p))}};export{l as _};

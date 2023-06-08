@@ -30,6 +30,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
                 pageName: "dashboard.invoices.send",
                 title: "Send Invoices",
             },
+            {
+                icon: "UploadCloudIcon",
+                pageName: "dashboard.invoices.unsent",
+                title: "Unsent Invoices",
+            },
         ];
 
         // ​​"manage-results"
